@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Login</title>
+    <title>Inicio de sesión</title>
   </head>
   <body><?php
 
