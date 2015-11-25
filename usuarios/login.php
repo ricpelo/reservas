@@ -29,7 +29,7 @@
         header("Location: ../reservas/reindex.php");
         return;
       else: ?>
-        <h3>Error: contraseña incorrecta</h3><?php
+        <h3>Error: contraseña no válida</h3><?php
       endif;
     endif; ?>
 
