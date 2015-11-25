@@ -12,7 +12,7 @@ create table usuarios (
 
 insert into usuarios (nick, password, dni, nombre, apellidos)
 values ('pepe', md5('pepe'), '52525252J', 'Pepe', 'Lotas'),
-       ('juan', md5('juan'), '12121212A', 'Juan', 'Illo');
+       ('juan', md5('juan'), '99999999Z', 'Juan', 'Illo');
 
 
 drop table if exists pistas cascade;
