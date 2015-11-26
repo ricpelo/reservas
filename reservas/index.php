@@ -26,7 +26,7 @@
     $dows = array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves',
                   'Viernes', 'Sábado');
     
-    define("UN_DIA", 3600 * 24);
+    define("VEINTICUATRO_HORAS", 3600 * 24);
     
     require '../comunes/auxiliar.php';
 
@@ -126,7 +126,7 @@
     {
       $dow = (int) date('w');
       $dif = ($dow == 0) ? 6 : $dow - 1;
-      $lunes = time() - $dif * UN_DIA;
+      $lunes = time() - $dif * VEINTICUATRO_HORAS;
     }
 
     $lunes_sql = date('Y-m-d', $lunes);
@@ -176,13 +176,13 @@
       <tr>
         <td>
           <form action="index.php" method="post">
-            <input type="hidden" name="lunes" value="<?= $lunes - UN_DIA * 7 ?>" />
+            <input type="hidden" name="lunes" value="<?= $lunes - VEINTICUATRO_HORAS * 7 ?>" />
             <input type="submit" value="Patrás" />  
           </form>
         </td>
         <td>
           <form action="index.php" method="post">
-            <input type="hidden" name="lunes" value="<?= $lunes + UN_DIA * 7 ?>" />
+            <input type="hidden" name="lunes" value="<?= $lunes + VEINTICUATRO_HORAS * 7 ?>" />
             <input type="submit" value="Palante" />  
           </form>
         </td>
@@ -193,7 +193,7 @@
     <table border="1" style="margin: auto">
       <thead>
         <th>Hora</th><?php
-        for ($d = $lunes, $i = 1; $d < $lunes + 5 * UN_DIA; $d += UN_DIA, $i++):
+        for ($d = $lunes, $i = 1; $d < $lunes + 5 * VEINTICUATRO_HORAS; $d += VEINTICUATRO_HORAS, $i++):
           $dia = date('d-m-Y', $d); ?>
           <th><?= $dia ?><br/>(<?= $dows[$i] ?>)</th><?php
         endfor; ?>
@@ -202,7 +202,7 @@
         for ($h = 10; $h < 20; $h++): ?>
           <tr>
             <td><?= $h ?>:00</td><?php
-            for ($d = $lunes; $d < $lunes + 5 * UN_DIA; $d += UN_DIA):
+            for ($d = $lunes; $d < $lunes + 5 * VEINTICUATRO_HORAS; $d += VEINTICUATRO_HORAS):
               $dia = date('Y-m-d', $d);
               if (isset($tabla[$dia][$h])):
                 if ($tabla[$dia][$h]['usuarios_id'] == $usuario):
